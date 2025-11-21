@@ -1,150 +1,50 @@
-/* ——————————————————————————
-   THEME PREMIUM — Noir & Or Mat
-   Zyqtron Website
-—————————————————————————— */
+/* ------------------------------
+   NAVIGATION PREMIUM ZYQTRON
+--------------------------------*/
 
-/* GLOBAL */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #0d1124;      /* Noir Nuit Premium */
-    color: #e6e6e6;                 /* Blanc doux */
-    font-family: "Inter", Arial, sans-serif;
-}
-
-/* NAVIGATION */
-.navbar {
-    text-align: center;
+.header-premium {
+    width: 100%;
     padding: 25px 0;
+    text-align: center;
+    background-color: transparent;
 }
 
-.navbar a {
-    margin: 0 18px;
-    color: #d4af37;                 /* Or Mat */
-    text-decoration: none;
+.nav-premium {
+    display: inline-flex;
+    gap: 35px;
     font-size: 15px;
     font-weight: 500;
-    transition: 0.2s ease-in-out;
 }
 
-.navbar a:hover {
-    color: #f4d27f;                 /* Or clair */
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 90px 20px 60px;
-    background-color: #0d1124;
-}
-
-.hero h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.hero p {
-    font-size: 16px;
-    opacity: 0.9;
-    max-width: 580px;
-    margin: 12px auto;
-}
-
-/* CTA BUTTONS */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    margin: 10px;
-    background-color: #d4af37;   /* Or Mat */
-    color: #0d1124;
-    font-weight: 600;
-    border-radius: 6px;
+.nav-premium a {
+    color: #d4af37; /* OR MAT */
     text-decoration: none;
-    transition: 0.2s;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #f4d27f;
+.nav-premium a:hover {
+    color: #f2d57c; /* Or mat plus clair */
+    opacity: 1;
 }
 
-.btn-secondary {
-    background-color: transparent;
-    border: 2px solid #d4af37;
-    color: #d4af37;
+/* PAGE FIX : assure un espace sous le menu */
+body {
+    padding-top: 10px;
 }
 
-.btn-secondary:hover {
-    background-color: #d4af37;
-    color: #0d1124;
-}
+/* -----------------------------------
+   RESPONSIVE (MOBILE)
+------------------------------------*/
 
-/* SECTION TITLES */
-section h2 {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 40px;
-    margin-top: 40px;
-    color: #ffffff;
-}
+@media (max-width: 768px) {
+    .nav-premium {
+        flex-wrap: wrap;
+        gap: 18px;
+        font-size: 14px;
+    }
 
-/* BLOCK CARDS */
-.card {
-    background-color: #10162e;
-    padding: 30px;
-    margin: 18px auto;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 650px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0,0,0,0.25);
-    transition: 0.25s ease-in-out;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-}
-
-.card h3 {
-    color: #d4af37;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-/* GUARANTEES */
-.guarantees {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto 60px;
-    font-size: 14px;
-    line-height: 1.6em;
-}
-
-.guarantees div {
-    margin-bottom: 8px;
-}
-
-/* EXAMPLES */
-.examples {
-    width: 80%;
-    max-width: 600px;
-    margin: 10px auto 80px;
-}
-
-.examples li {
-    background-color: #10162e;
-    padding: 14px 18px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    list-style: none;
-    border-left: 3px solid #d4af37;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px 0;
-    font-size: 13px;
-    color: #868686;
+    .header-premium {
+        padding: 20px 0;
+    }
 }
