@@ -1,228 +1,150 @@
-/* =============================================
-   ZYQTRON — THE PREMIUM EDITION
-   Palette : Marine profond (#0A0F1F), Gold mat (#D6B679)
-   ============================================= */
+/* ——————————————————————————
+   THEME PREMIUM — Noir & Or Mat
+   Zyqtron Website
+—————————————————————————— */
 
-/* GLOBAL RESET */
-* {
+/* GLOBAL */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
+    background-color: #0d1124;      /* Noir Nuit Premium */
+    color: #e6e6e6;                 /* Blanc doux */
     font-family: "Inter", Arial, sans-serif;
-    background-color: #0A0F1F;
-    color: #EEE;
-    line-height: 1.6;
 }
 
-/* =============================================
-   NAVBAR
-   ============================================= */
-
+/* NAVIGATION */
 .navbar {
-    width: 100%;
-    background-color: rgba(10,15,31,0.95);
-    padding: 18px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
     text-align: center;
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(214,182,121,0.15);
-    z-index: 999;
+    padding: 25px 0;
 }
 
 .navbar a {
-    color: #D6B679;
-    text-decoration: none;
     margin: 0 18px;
-    font-weight: 500;
+    color: #d4af37;                 /* Or Mat */
+    text-decoration: none;
     font-size: 15px;
-    transition: 0.3s ease;
+    font-weight: 500;
+    transition: 0.2s ease-in-out;
 }
 
 .navbar a:hover {
-    color: white;
+    color: #f4d27f;                 /* Or clair */
 }
 
-/* Add spacing after fixed navbar */
-body {
-    padding-top: 85px;
-}
-
-/* =============================================
-   HERO SECTION
-   ============================================= */
-
+/* HERO */
 .hero {
     text-align: center;
-    padding: 100px 20px 70px;
+    padding: 90px 20px 60px;
+    background-color: #0d1124;
 }
 
 .hero h1 {
-    font-size: 34px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    color: #FFF;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .hero p {
-    max-width: 650px;
-    margin: 0 auto 25px;
+    font-size: 16px;
     opacity: 0.9;
-    font-size: 17px;
+    max-width: 580px;
+    margin: 12px auto;
 }
 
-/* BUTTONS PREMIUM */
-
-.btn, .btn-secondary {
+/* CTA BUTTONS */
+.btn {
     display: inline-block;
-    padding: 14px 28px;
-    margin: 8px;
+    padding: 12px 24px;
+    margin: 10px;
+    background-color: #d4af37;   /* Or Mat */
+    color: #0d1124;
+    font-weight: 600;
     border-radius: 6px;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    transition: 0.25s;
-}
-
-.btn {
-    background-color: #D6B679;
-    color: #0A0F1F;
+    transition: 0.2s;
 }
 
 .btn:hover {
-    background-color: #c1a267;
+    background-color: #f4d27f;
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: #D6B679;
-    border: 2px solid #D6B679;
+    border: 2px solid #d4af37;
+    color: #d4af37;
 }
 
 .btn-secondary:hover {
-    background-color: #D6B679;
-    color: #0A0F1F;
+    background-color: #d4af37;
+    color: #0d1124;
 }
 
-/* =============================================
-   SECTION TITLES
-   ============================================= */
-
-.section-title {
+/* SECTION TITLES */
+section h2 {
     text-align: center;
-    font-size: 26px;
-    font-weight: 600;
-    margin: 50px 0 25px;
-    color: #D6B679;
+    font-size: 22px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: #ffffff;
 }
 
-/* =============================================
-   CARDS (Vérifier / Comprendre / Clarifier)
-   ============================================= */
-
+/* BLOCK CARDS */
 .card {
-    background-color: #111a2e;
-    border: 1px solid rgba(214,182,121,0.15);
-    border-radius: 10px;
+    background-color: #10162e;
     padding: 30px;
-    margin: 20px auto;
+    margin: 18px auto;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 650px;
     text-align: center;
-    width: 85%;
-    max-width: 750px;
-    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    transition: 0.25s ease-in-out;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    border-color: rgba(214,182,121,0.35);
 }
 
 .card h3 {
-    color: #D6B679;
-    font-size: 20px;
+    color: #d4af37;
     margin-bottom: 10px;
+    font-size: 18px;
 }
 
-/* =============================================
-   GUARANTEES SECTION
-   ============================================= */
-
+/* GUARANTEES */
 .guarantees {
-    margin-top: 40px;
-    padding: 25px;
-    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto 60px;
+    font-size: 14px;
+    line-height: 1.6em;
 }
 
-.guarantees p {
-    margin: 8px 0;
-    opacity: 0.85;
+.guarantees div {
+    margin-bottom: 8px;
 }
 
-/* =============================================
-   EXAMPLES LIST
-   ============================================= */
-
+/* EXAMPLES */
 .examples {
-    width: 85%;
-    max-width: 650px;
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #111a2e;
-    border: 1px solid rgba(214,182,121,0.15);
-}
-
-.examples ul {
-    list-style: none;
+    width: 80%;
+    max-width: 600px;
+    margin: 10px auto 80px;
 }
 
 .examples li {
-    padding: 10px;
-    border-bottom: 1px solid rgba(214,182,121,0.15);
+    background-color: #10162e;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    list-style: none;
+    border-left: 3px solid #d4af37;
 }
 
-.examples li:last-child {
-    border-bottom: none;
-}
-
-/* =============================================
-   FOOTER
-   ============================================= */
-
+/* FOOTER */
 footer {
-    margin-top: 60px;
-    padding: 25px;
     text-align: center;
-    font-size: 14px;
-    opacity: 0.7;
-    color: #AAA;
-}
-
-/* =============================================
-   RESPONSIVE (MOBILE OPTIMIZED)
-   ============================================= */
-
-@media (max-width: 768px) {
-
-    .navbar a {
-        margin: 0 10px;
-        font-size: 13px;
-    }
-
-    .hero h1 {
-        font-size: 26px;
-    }
-
-    .card {
-        padding: 25px 20px;
-    }
-
-    .btn, .btn-secondary {
-        padding: 12px 24px;
-        font-size: 14px;
-    }
+    padding: 40px 0;
+    font-size: 13px;
+    color: #868686;
 }
