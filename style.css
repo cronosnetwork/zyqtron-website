@@ -1,131 +1,218 @@
+/* ---------------------------------------
+   ZYQTRON – STYLE PREMIUM (Noir/Or/Bleu Nuit)
+   --------------------------------------- */
+
+/* --------- VARIABLES COULEURS ---------- */
+:root {
+    --bleu-nuit: #0A0F2C;
+    --bleu-nuit-soft: #121834;
+    --or-mat: #C4A269;
+    --blanc: #FFFFFF;
+    --gris-texte: #CCCCCC;
+    --gris-fond: #F5F5F5;
+    --bleu-cta: #0A84FF;
+}
+
+/* --------- STYLE GLOBAL ---------- */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fb;
-    color: #222;
+    font-family: "Inter", Arial, sans-serif;
+    background-color: var(--bleu-nuit);
+    color: var(--blanc);
+    line-height: 1.6;
 }
 
-.hero {
-    background-color: #071a2f;
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.hero h1 {
-    margin: 0 0 20px;
-    font-size: 32px;
-}
-
-.hero p {
-    margin: 10px auto 30px;
-    max-width: 500px;
-    font-size: 16px;
-    opacity: 0.9;
-}
-
-.cta-container {
-    margin-top: 20px;
-}
-
-.cta, .cta-secondary {
-    display: inline-block;
-    padding: 12px 20px;
-    margin: 5px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.cta {
-    background-color: #0099ff;
-    color: white;
-}
-
-.cta-secondary {
-    background-color: white;
-    border: 2px solid #0099ff;
-    color: #0099ff;
-}
-
-.section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.section.grey {
-    background-color: #eef1f5;
-}
-
-.cards {
-    max-width: 900px;
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: white;
-    width: 260px;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
-}
-
-.guarantees {
-    max-width: 900px;
-    margin: 30px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.g-item {
-    background: white;
-    padding: 15px 20px;
-    border-radius: 6px;
-    margin: 10px;
-    width: 300px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-}
-
-.examples {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    list-style: none;
-    padding: 0;
-}
-
-.examples li {
-    padding: 12px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-footer {
-    background-color: #071a2f;
-    color: white;
-    text-align: center;
-    padding: 20px 10px;
-    margin-top: 40px;
-}
+/* ---------------------------------------
+   NAVBAR
+   --------------------------------------- */
 .navbar {
-    background: #071a2f;
-    padding: 15px;
+    background-color: var(--bleu-nuit-soft);
+    padding: 20px 0;
     text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .navbar a {
-    color: white;
-    margin: 0 12px;
+    color: var(--blanc);
+    margin: 0 18px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 15px;
+    transition: 0.2s ease;
 }
 
 .navbar a:hover {
-    color: #00aaff;
+    color: var(--or-mat);
+}
+
+/* ---------------------------------------
+   TITRES & SECTIONS
+   --------------------------------------- */
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--blanc);
+    text-align: center;
+}
+
+section {
+    padding: 80px 20px;
+}
+
+/* Hero section (accueil) */
+.hero {
+    background-color: var(--bleu-nuit-soft);
+    padding: 120px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.85;
+    font-size: 18px;
+}
+
+/* ---------------------------------------
+   BOUTONS
+   --------------------------------------- */
+
+.btn {
+    display: inline-block;
+    background-color: var(--or-mat);
+    color: var(--bleu-nuit);
+    padding: 14px 28px;
+    margin-top: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: 0.25s ease;
+}
+
+.btn:hover {
+    background-color: #d8b782;
+}
+
+/* Bouton bleu clair */
+.btn-blue {
+    background-color: var(--bleu-cta);
+    color: var(--blanc);
+}
+
+.btn-blue:hover {
+    background-color: #006fe0;
+}
+
+/* ---------------------------------------
+   CARTES & BLOCS
+   --------------------------------------- */
+
+.card {
+    background-color: var(--bleu-nuit-soft);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 40px 25px;
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+.card h3 {
+    color: var(--or-mat);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Grille 3 colonnes */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-color: var(--bleu-nuit-soft);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 35px 20px;
+    border-radius: 12px;
+    transition: 0.2s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-6px);
+    border-color: var(--or-mat);
+}
+
+/* ---------------------------------------
+   FORMULAIRE CONTACT
+   --------------------------------------- */
+
+form {
+    background-color: var(--bleu-nuit-soft);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 650px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: #ffffff0f;
+    color: var(--blanc);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--or-mat);
+}
+
+/* ---------------------------------------
+   FOOTER
+   --------------------------------------- */
+
+footer {
+    background-color: var(--bleu-nuit-soft);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--gris-texte);
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+footer p {
+    opacity: 0.7;
+}
+
+/* ---------------------------------------
+   RESPONSIVE
+   --------------------------------------- */
+
+@media (max-width: 900px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar a {
+        display: block;
+        margin: 12px 0;
+    }
 }
