@@ -1,245 +1,228 @@
-/* ---------------------------------------
-   ZYQTRON – STYLE PREMIUM (Noir/Or/Bleu Nuit)
-   --------------------------------------- */
+/* =============================================
+   ZYQTRON — THE PREMIUM EDITION
+   Palette : Marine profond (#0A0F1F), Gold mat (#D6B679)
+   ============================================= */
 
-/* --------- VARIABLES COULEURS ---------- */
-:root {
-    --bleu-nuit: #0A0F2C;
-    --bleu-nuit-soft: #121834;
-    --or-mat: #C4A269;
-    --blanc: #FFFFFF;
-    --gris-texte: #CCCCCC;
-    --gris-fond: #F5F5F5;
-    --bleu-cta: #0A84FF;
-}
-
-/* --------- STYLE GLOBAL ---------- */
-body {
-   /* NAVBAR PREMIUM */
-.navbar {
-    background-color: #11182f;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.navbar ul {
-    list-style: none;
+/* GLOBAL RESET */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #0A0F1F;
+    color: #EEE;
+    line-height: 1.6;
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+
+.navbar {
+    width: 100%;
+    background-color: rgba(10,15,31,0.95);
+    padding: 18px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(214,182,121,0.15);
+    z-index: 999;
 }
 
 .navbar a {
-    color: #d4af37; /* or Gold premium */
+    color: #D6B679;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: 0.3s;
+    margin: 0 18px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.3s ease;
 }
 
 .navbar a:hover {
     color: white;
 }
- margin: 0;
-    padding: 0;
-    font-family: "Inter", Arial, sans-serif;
-    background-color: var(--bleu-nuit);
-    color: var(--blanc);
-    line-height: 1.6;
+
+/* Add spacing after fixed navbar */
+body {
+    padding-top: 85px;
 }
 
-/* ---------------------------------------
-   NAVBAR
-   --------------------------------------- */
-.navbar {
-    background-color: var(--bleu-nuit-soft);
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
+/* =============================================
+   HERO SECTION
+   ============================================= */
 
-.navbar a {
-    color: var(--blanc);
-    margin: 0 18px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: 0.2s ease;
-}
-
-.navbar a:hover {
-    color: var(--or-mat);
-}
-
-/* ---------------------------------------
-   TITRES & SECTIONS
-   --------------------------------------- */
-
-h1, h2, h3 {
-    font-weight: 700;
-    color: var(--blanc);
-    text-align: center;
-}
-
-section {
-    padding: 80px 20px;
-}
-
-/* Hero section (accueil) */
 .hero {
-    background-color: var(--bleu-nuit-soft);
-    padding: 120px 20px;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 100px 20px 70px;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    font-size: 34px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #FFF;
 }
 
 .hero p {
     max-width: 650px;
-    margin: 0 auto;
-    opacity: 0.85;
-    font-size: 18px;
+    margin: 0 auto 25px;
+    opacity: 0.9;
+    font-size: 17px;
 }
 
-/* ---------------------------------------
-   BOUTONS
-   --------------------------------------- */
+/* BUTTONS PREMIUM */
+
+.btn, .btn-secondary {
+    display: inline-block;
+    padding: 14px 28px;
+    margin: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.25s;
+}
 
 .btn {
-    display: inline-block;
-    background-color: var(--or-mat);
-    color: var(--bleu-nuit);
-    padding: 14px 28px;
-    margin-top: 25px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 6px;
-    transition: 0.25s ease;
+    background-color: #D6B679;
+    color: #0A0F1F;
 }
 
 .btn:hover {
-    background-color: #d8b782;
+    background-color: #c1a267;
 }
 
-/* Bouton bleu clair */
-.btn-blue {
-    background-color: var(--bleu-cta);
-    color: var(--blanc);
+.btn-secondary {
+    background-color: transparent;
+    color: #D6B679;
+    border: 2px solid #D6B679;
 }
 
-.btn-blue:hover {
-    background-color: #006fe0;
+.btn-secondary:hover {
+    background-color: #D6B679;
+    color: #0A0F1F;
 }
 
-/* ---------------------------------------
-   CARTES & BLOCS
-   --------------------------------------- */
+/* =============================================
+   SECTION TITLES
+   ============================================= */
+
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 50px 0 25px;
+    color: #D6B679;
+}
+
+/* =============================================
+   CARDS (Vérifier / Comprendre / Clarifier)
+   ============================================= */
 
 .card {
-    background-color: var(--bleu-nuit-soft);
-    border: 1px solid rgba(255,255,255,0.08);
+    background-color: #111a2e;
+    border: 1px solid rgba(214,182,121,0.15);
     border-radius: 10px;
-    padding: 40px 25px;
+    padding: 30px;
     margin: 20px auto;
-    max-width: 900px;
     text-align: center;
+    width: 85%;
+    max-width: 750px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(214,182,121,0.35);
 }
 
 .card h3 {
-    color: var(--or-mat);
-    font-size: 22px;
+    color: #D6B679;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
-/* Grille 3 colonnes */
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
+/* =============================================
+   GUARANTEES SECTION
+   ============================================= */
+
+.guarantees {
+    margin-top: 40px;
+    padding: 25px;
+    text-align: center;
 }
 
-.grid-item {
-    background-color: var(--bleu-nuit-soft);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 35px 20px;
-    border-radius: 12px;
-    transition: 0.2s ease;
+.guarantees p {
+    margin: 8px 0;
+    opacity: 0.85;
 }
 
-.grid-item:hover {
-    transform: translateY(-6px);
-    border-color: var(--or-mat);
-}
+/* =============================================
+   EXAMPLES LIST
+   ============================================= */
 
-/* ---------------------------------------
-   FORMULAIRE CONTACT
-   --------------------------------------- */
-
-form {
-    background-color: var(--bleu-nuit-soft);
-    padding: 40px;
-    border-radius: 12px;
+.examples {
+    width: 85%;
     max-width: 650px;
-    margin: 0 auto;
-    border: 1px solid rgba(255,255,255,0.08);
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #111a2e;
+    border: 1px solid rgba(214,182,121,0.15);
 }
 
-input, textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 18px;
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.2);
-    background-color: #ffffff0f;
-    color: var(--blanc);
+.examples ul {
+    list-style: none;
 }
 
-input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--or-mat);
+.examples li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(214,182,121,0.15);
 }
 
-/* ---------------------------------------
+.examples li:last-child {
+    border-bottom: none;
+}
+
+/* =============================================
    FOOTER
-   --------------------------------------- */
+   ============================================= */
 
 footer {
-    background-color: var(--bleu-nuit-soft);
-    padding: 40px 20px;
-    text-align: center;
-    color: var(--gris-texte);
     margin-top: 60px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-footer p {
+    padding: 25px;
+    text-align: center;
+    font-size: 14px;
     opacity: 0.7;
+    color: #AAA;
 }
 
-/* ---------------------------------------
-   RESPONSIVE
-   --------------------------------------- */
+/* =============================================
+   RESPONSIVE (MOBILE OPTIMIZED)
+   ============================================= */
 
-@media (max-width: 900px) {
-    .grid-3 {
-        grid-template-columns: 1fr;
-    }
-    .hero h1 {
-        font-size: 32px;
-    }
-}
+@media (max-width: 768px) {
 
-@media (max-width: 600px) {
     .navbar a {
-        display: block;
-        margin: 12px 0;
+        margin: 0 10px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .card {
+        padding: 25px 20px;
+    }
+
+    .btn, .btn-secondary {
+        padding: 12px 24px;
+        font-size: 14px;
     }
 }
