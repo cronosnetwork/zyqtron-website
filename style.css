@@ -1,50 +1,176 @@
-/* ------------------------------
-   NAVIGATION PREMIUM ZYQTRON
---------------------------------*/
+/* ---------------------------- */
+/*      ZYQTRON – STYLE A      */
+/*  Premium Bleu Nuit + Or Mat */
+/* ---------------------------- */
+
+/* ---------- RESET + BASE ---------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0f1320; /* Bleu nuit premium */
+    color: #e4e4e4; /* Gris clair pro */
+    padding-top: 100px; /* espace sous la navbar */
+}
+
+h1, h2, h3 {
+    color: #d4af37; /* Or mat premium */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+p, li {
+    color: #dcdcdc;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ---------- NAVIGATION PREMIUM ---------- */
 
 .header-premium {
     width: 100%;
-    padding: 25px 0;
+    padding: 20px 0;
     text-align: center;
-    background-color: transparent;
+    background: transparent;
 }
 
-.nav-premium {
+.nav-premium ul {
     display: inline-flex;
     gap: 35px;
-    font-size: 15px;
-    font-weight: 500;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-premium a {
-    color: #d4af37; /* OR MAT */
+    color: #d4af37;
     text-decoration: none;
-    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
     transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-.nav-premium a:hover {
-    color: #f2d57c; /* Or mat plus clair */
+.nav-premium a:hover,
+.nav-premium a.active {
+    color: #e7c97a;
     opacity: 1;
 }
 
-/* PAGE FIX : assure un espace sous le menu */
-body {
-    padding-top: 10px;
+/* ---------- HERO SECTION ---------- */
+
+.hero {
+    background-color: #0f1320;
+    padding: 50px 20px;
+    text-align: center;
 }
 
-/* -----------------------------------
-   RESPONSIVE (MOBILE)
-------------------------------------*/
+.hero p {
+    font-size: 17px;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+.btn, .btn-secondary {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #0f1320;
+    background-color: #d4af37;
+    font-weight: 600;
+    margin: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b8962e;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+}
+
+.btn-secondary:hover {
+    background-color: #d4af37;
+    color: #0f1320;
+}
+
+/* ---------- CARDS PREMIUM ---------- */
+
+.cards {
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background-color: #151a2d;
+    padding: 25px;
+    margin: 15px auto;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #222739;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+    background-color: #1d2236;
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* ---------- SECTIONS ---------- */
+
+.section {
+    padding: 40px 20px;
+}
+
+.section.grey {
+    background-color: #151a2d;
+    padding: 40px 20px;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    text-align: center;
+    padding: 25px 0;
+    color: #999;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 768px) {
-    .nav-premium {
+
+    .nav-premium ul {
         flex-wrap: wrap;
         gap: 18px;
-        font-size: 14px;
     }
 
-    .header-premium {
-        padding: 20px 0;
+    .hero {
+        padding: 40px 10px;
+    }
+
+    .card {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    body {
+        padding-top: 140px;
     }
 }
