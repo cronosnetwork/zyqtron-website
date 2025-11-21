@@ -15,7 +15,34 @@
 
 /* --------- STYLE GLOBAL ---------- */
 body {
+   /* NAVBAR PREMIUM */
+.navbar {
+    background-color: #11182f;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.navbar a {
+    color: #d4af37; /* or Gold premium */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: white;
+}
+ margin: 0;
     padding: 0;
     font-family: "Inter", Arial, sans-serif;
     background-color: var(--bleu-nuit);
