@@ -1,81 +1,128 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zyqtron – Analyse & Clarification</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+import React, { useState } from 'react';
+import Head from 'next/head';
+import { Shield, Brain, Zap, Lock, Activity, Users, FileText, Globe } from 'lucide-react';
 
-<body>
-<header class="header-premium">
-    <nav class="nav-premium">
-        <a href="index.html">Accueil</a>
-        <a href="analyse.html">Analyse</a>
-        <a href="creation.html">Création</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="apropos.html">À propos</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+// --- CONFIGURATION DES 8 UNIVERS (PORTES D'ENTRÉE) ---
+const UNIVERSES = [
+  { id: 'business', label: 'Business & Stratégie', icon: <Brain size={32} />, color: 'text-amber-400' },
+  { id: 'cyber', label: 'Cybersécurité & Arnaques', icon: <Shield size={32} />, color: 'text-emerald-400' },
+  { id: 'family', label: 'Famille & Vie Perso', icon: <Users size={32} />, color: 'text-blue-400' },
+  { id: 'legal', label: 'Juridique & Contrats', icon: <FileText size={32} />, color: 'text-slate-300' },
+  { id: 'tech', label: 'Tech & Web', icon: <Globe size={32} />, color: 'text-cyan-400' },
+  { id: 'creation', label: 'Création & Idées', icon: <Zap size={32} />, color: 'text-yellow-300' },
+  { id: 'sport', label: 'Sport & Performance', icon: <Activity size={32} />, color: 'text-red-400' },
+  { id: 'secret', label: 'Autre / Confidentiel', icon: <Lock size={32} />, color: 'text-purple-400' },
+];
 
+export default function Home() {
+  const [activeTab, setActiveTab] = useState(null);
+  const [chatStep, setChatStep] = useState(0);
 
+  // --- LOGIQUE SIMPLIFIÉE DU CHATBOT (ARBRE DE DÉCISION) ---
+  const startDiagnosis = (universeId) => {
+    setActiveTab(universeId);
+    setChatStep(1); // Passage à l'étape "Qualification"
+  };
 
-<section class="hero">
-    <h1>Un doute ? Nous analysons pour vous.</h1>
-    <p>Zyqtron vous aide à comprendre une situation, un document ou une annonce.<br>
-    Analyse assistée IA + expertise humaine.</p>
+  return (
+    <div className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans selection:bg-emerald-500 selection:text-black">
+      <Head>
+        <title>ZYQTRON | Moteur de Certitude</title>
+        <meta name="description" content="Cabinet d'analyse stratégique augmenté. Une problématique ? Nous avons la réponse." />
+      </Head>
 
-    <div class="cta-container">
-        <a href="analyse.html" class="btn">Je suis un Particulier</a>
-        <a href="analyse.html" class="btn btn-secondary">Je suis un Professionnel</a>
-    </div>
-</section>
+      {/* --- HEADER --- */}
+      <header className="p-6 flex justify-between items-center border-b border-gray-800">
+        <div className="text-2xl font-bold tracking-tighter">
+          ZYQTRON<span className="text-emerald-500">.</span>
+        </div>
+        <button className="px-4 py-2 text-sm font-medium border border-gray-700 rounded hover:bg-gray-800 transition">
+          Espace Client
+        </button>
+      </header>
 
-<section class="section">
-    <h2>Ce que fait Zyqtron</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>Vérifier</h3>
-            <p>une annonce, un document, un profil.</p>
+      {/* --- HERO SECTION --- */}
+      <main className="max-w-6xl mx-auto px-6 py-16">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+            Une problématique ? <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
+              Nous avons la réponse.
+            </span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Cabinet d'analyse stratégique et de sécurisation.
+            Ne restez pas dans le doute. Activez le moteur ZYQTRON.
+          </p>
         </div>
 
-        <div class="card">
-            <h3>Comprendre</h3>
-            <p>ce qui est cohérent ou non.</p>
-        </div>
+        {/* --- GRILLE DES 8 PILIERS (NAVIGATEUR) --- */}
+        {!activeTab && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {UNIVERSES.map((universe) => (
+              <button
+                key={universe.id}
+                onClick={() => startDiagnosis(universe.id)}
+                className="group p-6 bg-[#111] border border-gray-800 rounded-xl hover:border-emerald-500/50 hover:bg-[#161616] transition-all duration-300 text-left"
+              >
+                <div className={`mb-4 ${universe.color} group-hover:scale-110 transition-transform`}>
+                  {universe.icon}
+                </div>
+                <h3 className="font-bold text-lg">{universe.label}</h3>
+                <p className="text-xs text-gray-500 mt-2">Lancer l'analyse &rarr;</p>
+              </button>
+            ))}
+          </div>
+        )}
 
-        <div class="card">
-            <h3>Clarifier</h3>
-            <p>vos options et votre prochain pas.</p>
-        </div>
+        {/* --- ZONE DE DIAGNOSTIC (CHATBOT INTEGRÉ) --- */}
+        {activeTab && (
+          <div className="max-w-2xl mx-auto bg-[#111] border border-gray-800 rounded-2xl p-8 shadow-2xl animate-fade-in-up">
+            <div className="flex justify-between items-start mb-6 border-b border-gray-800 pb-4">
+              <div>
+                <span className="text-xs font-mono text-emerald-500 uppercase tracking-widest">Module Actif</span>
+                <h2 className="text-2xl font-bold mt-1">
+                  {UNIVERSES.find(u => u.id === activeTab)?.label}
+                </h2>
+              </div>
+              <button onClick={() => setActiveTab(null)} className="text-gray-500 hover:text-white">Fermer</button>
+            </div>
+
+            {/* SCRIPT LOGIQUE DU CHATBOT */}
+            <div className="space-y-6">
+              <div className="bg-[#1a1a1a] p-4 rounded-lg rounded-tl-none border border-gray-700 inline-block">
+                <p>Bonjour. Je suis l'assistant de pré-qualification Zyqtron.</p>
+                <p className="mt-2 text-gray-300">Pour établir votre diagnostic, quelle est votre situation ?</p>
+              </div>
+
+              {/* CHOIX DE PROFIL */}
+              <div className="flex flex-col space-y-3">
+                <button className="p-3 text-left border border-gray-700 rounded hover:bg-emerald-900/20 hover:border-emerald-500 transition">
+                  👤 Je suis un Particulier
+                </button>
+                <button className="p-3 text-left border border-gray-700 rounded hover:bg-emerald-900/20 hover:border-emerald-500 transition">
+                  🏢 Je suis un Professionnel / TPE
+                </button>
+                <button className="p-3 text-left border border-gray-700 rounded hover:bg-emerald-900/20 hover:border-emerald-500 transition">
+                  🚨 C'est une urgence (Arnaque / Piratage)
+                </button>
+              </div>
+            </div>
+            
+            <div className="mt-8 pt-4 border-t border-gray-800 text-center text-xs text-gray-600">
+              <Lock size={12} className="inline mr-1" />
+              Connexion sécurisée TLS. Analyse confidentielle Z-Score.
+            </div>
+          </div>
+        )}
+      </main>
+
+      {/* --- FOOTER --- */}
+      <footer className="text-center py-8 text-gray-600 text-sm border-t border-gray-900 mt-12">
+        <p>&copy; 2024-2025 ZYQTRON SYSTEM. Tous droits réservés.</p>
+        <p className="mt-2 text-xs">Technologie Hybride IA + Humain.</p>
+      </footer>
     </div>
-</section>
-
-<section class="section grey">
-    <h2>Garanties</h2>
-
-    <div class="guarantees">
-        <div class="g-item">Analyse supervisée par un humain</div>
-        <div class="g-item">Aucune décision automatique</div>
-        <div class="g-item">Obligation de moyens</div>
-        <div class="g-item">Données supprimées sous 30 jours</div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Exemples</h2>
-    <ul class="examples">
-        <li>Cette offre est-elle fiable ?</li>
-        <li>Ce contrat est-il cohérent ?</li>
-        <li>Ce profil est-il authentique ?</li>
-    </ul>
-</section>
-
-<footer>
-    <p>© 2025 Zyqtron. Tous droits réservés.</p>
-</footer>
-
-</body>
-</html>
+  );
+}
+     
