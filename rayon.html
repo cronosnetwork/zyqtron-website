@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayon ZYQTRON</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #050505; color: #e0e0e0; font-family: sans-serif; }
+        .product-card:hover { transform: translateY(-5px); border-color: #10b981; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="p-6 border-b border-gray-800 bg-[#0a0a0a]">
+        <div class="text-2xl font-extrabold tracking-tighter text-white">
+            <a href="index.html">ZYQTRON<span class="text-emerald-500">.</span></a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 w-full">
+
+        <div class="mb-12 border-b border-gray-800 pb-8">
+            <span class="text-emerald-500 font-mono text-xs uppercase tracking-widest">Univers</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mt-2">BUSINESS & STRATÉGIE</h1>
+            <p class="text-gray-400 mt-4 max-w-2xl">
+                Sécurisez vos actifs, analysez vos marchés et optimisez votre présence numérique.
+                <br>Des solutions tactiques pour TPE, Freelances et PME.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            
+            <div class="product-card bg-[#111] border border-gray-800 p-6 rounded-xl transition-all duration-300 flex flex-col">
+                <div class="text-emerald-500 mb-4"><i data-lucide="globe" size="32"></i></div>
+                <h3 class="text-xl font-bold text-white mb-2">Audit Site Web & SEO</h3>
+                <p class="text-sm text-gray-400 mb-6 flex-grow">Analyse technique de votre visibilité. Pourquoi Google ne vous voit pas ?</p>
+                <div class="border-t border-gray-800 pt-4 mt-auto">
+                    <div class="text-xs text-gray-500 mb-1">À partir de</div>
+                    <div class="text-2xl font-bold text-white mb-4">4,99 €</div>
+                    <a href="produit.html" class="block w-full py-3 bg-gray-800 hover:bg-emerald-600 text-white text-center rounded font-bold transition">
+                        Configurer &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card bg-[#111] border border-gray-800 p-6 rounded-xl transition-all duration-300 flex flex-col">
+                <div class="text-emerald-500 mb-4"><i data-lucide="file-search" size="32"></i></div>
+                <h3 class="text-xl font-bold text-white mb-2">Crash-Test Idée Business</h3>
+                <p class="text-sm text-gray-400 mb-6 flex-grow">Vous avez une idée ? On la teste face au marché avant de dépenser 1€.</p>
+                <div class="border-t border-gray-800 pt-4 mt-auto">
+                    <div class="text-xs text-gray-500 mb-1">À partir de</div>
+                    <div class="text-2xl font-bold text-white mb-4">9,99 €</div>
+                    <a href="produit.html" class="block w-full py-3 bg-gray-800 hover:bg-emerald-600 text-white text-center rounded font-bold transition">
+                        Configurer &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card bg-[#111] border border-gray-800 p-6 rounded-xl transition-all duration-300 flex flex-col">
+                <div class="text-emerald-500 mb-4"><i data-lucide="shield-check" size="32"></i></div>
+                <h3 class="text-xl font-bold text-white mb-2">Vérification Partenaire</h3>
+                <p class="text-sm text-gray-400 mb-6 flex-grow">Ce fournisseur ou ce client est-il fiable ? Analyse de solvabilité et réputation.</p>
+                <div class="border-t border-gray-800 pt-4 mt-auto">
+                    <div class="text-xs text-gray-500 mb-1">À partir de</div>
+                    <div class="text-2xl font-bold text-white mb-4">19,99 €</div>
+                    <a href="produit.html" class="block w-full py-3 bg-gray-800 hover:bg-emerald-600 text-white text-center rounded font-bold transition">
+                        Configurer &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bg-[#0f0f0f] border border-dashed border-gray-700 rounded-2xl p-8 text-center">
+            <h3 class="text-xl font-bold text-white mb-2">Vous ne trouvez pas votre besoin ?</h3>
+            <p class="text-gray-400 mb-6">Chaque business est unique. Demandez une analyse sur mesure au Commandant.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-white hover:text-black text-white rounded-lg font-bold transition">
+                <i data-lucide="mail"></i> Faire une demande spécifique
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
