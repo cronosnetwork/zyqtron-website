@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Site Web | ZYQTRON</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #050505; color: #e0e0e0; font-family: sans-serif; }
+        .option-check:checked + div { border-color: #10b981; background-color: #064e3b; }
+        .card-selected { border-color: #10b981; box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="p-6 border-b border-gray-800 bg-[#0a0a0a]">
+        <div class="text-2xl font-extrabold tracking-tighter text-white">
+            <a href="index.html">ZYQTRON<span class="text-emerald-500">.</span></a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 w-full">
+        <div class="mb-10 text-center">
+            <span class="text-emerald-500 font-mono text-xs uppercase tracking-widest">Pôle Insights</span>
+            <h1 class="text-3xl md:text-4xl font-bold text-white mt-2">AUDIT DE SITE WEB</h1>
+            <p class="text-gray-400 mt-2">Votre site est-il performant ? Diagnostic de visibilité et d'erreurs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div onclick="selectPack(4.99)" id="pack-flash" class="cursor-pointer border border-gray-800 bg-[#111] p-6 rounded-xl hover:border-gray-600 transition">
+                <h3 class="text-xl font-bold text-white">SCAN FLASH</h3>
+                <div class="text-3xl font-bold text-emerald-400 my-4">4,99 €</div>
+                <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                    <li>✓ Rapport Technique Brut</li>
+                    <li>✓ Liste des erreurs (Rouge/Vert)</li>
+                    <li>✓ Score de Performance</li>
+                </ul>
+                <div class="w-full py-2 bg-gray-800 text-center rounded">Sélectionner</div>
+            </div>
+
+            <div onclick="selectPack(19.99)" id="pack-explorer" class="cursor-pointer border-2 border-emerald-600 bg-[#0f1f15] p-6 rounded-xl transform scale-105 shadow-2xl">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full uppercase font-bold">Populaire</div>
+                <h3 class="text-xl font-bold text-white">EXPLORER</h3>
+                <div class="text-3xl font-bold text-emerald-400 my-4">19,99 €</div>
+                <ul class="text-sm text-gray-300 space-y-2 mb-6">
+                    <li>✓ Tout le Pack Flash</li>
+                    <li>✓ <strong>Interprétation en Français</strong></li>
+                    <li>✓ Priorité de traitement</li>
+                </ul>
+                <div class="w-full py-2 bg-emerald-600 text-white text-center rounded font-bold">Sélectionner</div>
+            </div>
+
+            <div onclick="location.href='contact.html'" class="cursor-pointer border border-gray-800 bg-[#111] p-6 rounded-xl hover:border-purple-500 transition">
+                <h3 class="text-xl font-bold text-white">STRATÈGE</h3>
+                <div class="text-xl font-bold text-purple-400 my-4">Sur Devis</div>
+                <p class="text-xs text-gray-500 mb-4">À partir de 149€</p>
+                <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                    <li>✓ Audit UX/Design complet</li>
+                    <li>✓ Plan d'action détaillé</li>
+                    <li>✓ Analyse concurrentielle</li>
+                </ul>
+                <div class="w-full py-2 border border-purple-500 text-purple-400 text-center rounded">Demander</div>
+            </div>
+        </div>
+
+        <div id="options-zone" class="hidden animate-fade-in mb-12">
+            <h3 class="text-xl font-bold text-white mb-6 border-l-4 border-emerald-500 pl-4">OPTIONS POSSIBLES</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label class="cursor-pointer">
+                    <input type="checkbox" class="option-check hidden" onchange="updateTotal(9, this)">
+                    <div class="border border-gray-700 bg-[#161616] p-4 rounded-lg flex justify-between items-center hover:bg-[#222]">
+                        <div><div class="font-bold text-white">⚡️ Urgence 24h</div><div class="text-xs text-gray-500">Traitement prioritaire</div></div>
+                        <div class="text-emerald-400 font-mono">+9 €</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="checkbox" class="option-check hidden" onchange="updateTotal(29, this)">
+                    <div class="border border-gray-700 bg-[#161616] p-4 rounded-lg flex justify-between items-center hover:bg-[#222]">
+                        <div><div class="font-bold text-white">📝 Rédaction Marketing</div><div class="text-xs text-gray-500">Je réécris vos titres pour vendre</div></div>
+                        <div class="text-emerald-400 font-mono">+29 €</div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div id="payment-zone" class="hidden fixed bottom-0 left-0 right-0 bg-[#111] border-t border-gray-800 p-6 shadow-2xl">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-4">
+                    <span class="text-sm text-gray-400 uppercase">Statut :</span>
+                    <select class="bg-[#222] text-white border border-gray-700 rounded p-2 text-sm">
+                        <option value="particulier">👤 PARTICULIER (Prix Soutenu)</option>
+                        <option value="pro">🏢 ENTREPRISE (Facture Pro)</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="text-right"><div class="text-xs text-gray-500">Total</div><div class="text-3xl font-bold text-white" id="display-total">0,00 €</div></div>
+                    <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-lg">COMMANDER &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let basePrice = 0; let optionsPrice = 0;
+        function selectPack(price) {
+            document.getElementById('pack-flash').classList.remove('card-selected');
+            document.getElementById('pack-explorer').classList.remove('card-selected');
+            if(price === 4.99) document.getElementById('pack-flash').classList.add('card-selected');
+            if(price === 19.99) document.getElementById('pack-explorer').classList.add('card-selected');
+            basePrice = price;
+            document.getElementById('options-zone').classList.remove('hidden');
+            document.getElementById('payment-zone').classList.remove('hidden');
+            calculateTotal();
+        }
+        function updateTotal(amount, checkbox) { checkbox.checked ? optionsPrice += amount : optionsPrice -= amount; calculateTotal(); }
+        function calculateTotal() { document.getElementById('display-total').innerText = (basePrice + optionsPrice).toFixed(2).replace('.', ',') + " €"; }
+        lucide.createIcons();
+    </script>
+</body>
+</html>
