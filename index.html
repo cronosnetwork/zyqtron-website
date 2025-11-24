@@ -1,128 +1,124 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import { Shield, Brain, Zap, Lock, Activity, Users, FileText, Globe } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZYQTRON | Moteur de Certitude</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #050505; color: #e0e0e0; font-family: sans-serif; }
+        .universe-card:hover { border-color: #10b981; background-color: #111; transform: translateY(-2px); }
+        .fade-in { animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
 
-// --- CONFIGURATION DES 8 UNIVERS (PORTES D'ENTRÉE) ---
-const UNIVERSES = [
-  { id: 'business', label: 'Business & Stratégie', icon: <Brain size={32} />, color: 'text-amber-400' },
-  { id: 'cyber', label: 'Cybersécurité & Arnaques', icon: <Shield size={32} />, color: 'text-emerald-400' },
-  { id: 'family', label: 'Famille & Vie Perso', icon: <Users size={32} />, color: 'text-blue-400' },
-  { id: 'legal', label: 'Juridique & Contrats', icon: <FileText size={32} />, color: 'text-slate-300' },
-  { id: 'tech', label: 'Tech & Web', icon: <Globe size={32} />, color: 'text-cyan-400' },
-  { id: 'creation', label: 'Création & Idées', icon: <Zap size={32} />, color: 'text-yellow-300' },
-  { id: 'sport', label: 'Sport & Performance', icon: <Activity size={32} />, color: 'text-red-400' },
-  { id: 'secret', label: 'Autre / Confidentiel', icon: <Lock size={32} />, color: 'text-purple-400' },
-];
-
-export default function Home() {
-  const [activeTab, setActiveTab] = useState(null);
-  const [chatStep, setChatStep] = useState(0);
-
-  // --- LOGIQUE SIMPLIFIÉE DU CHATBOT (ARBRE DE DÉCISION) ---
-  const startDiagnosis = (universeId) => {
-    setActiveTab(universeId);
-    setChatStep(1); // Passage à l'étape "Qualification"
-  };
-
-  return (
-    <div className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans selection:bg-emerald-500 selection:text-black">
-      <Head>
-        <title>ZYQTRON | Moteur de Certitude</title>
-        <meta name="description" content="Cabinet d'analyse stratégique augmenté. Une problématique ? Nous avons la réponse." />
-      </Head>
-
-      {/* --- HEADER --- */}
-      <header className="p-6 flex justify-between items-center border-b border-gray-800">
-        <div className="text-2xl font-bold tracking-tighter">
-          ZYQTRON<span className="text-emerald-500">.</span>
+    <header class="p-6 border-b border-gray-800 flex justify-between items-center bg-[#0a0a0a]">
+        <div class="text-2xl font-extrabold tracking-tighter text-white">
+            ZYQTRON<span class="text-emerald-500">.</span>
         </div>
-        <button className="px-4 py-2 text-sm font-medium border border-gray-700 rounded hover:bg-gray-800 transition">
-          Espace Client
-        </button>
-      </header>
+        <a href="mailto:contact@zyqtron.com" class="px-4 py-2 text-sm border border-gray-700 rounded hover:bg-gray-800 transition">
+            Espace Client
+        </a>
+    </header>
 
-      {/* --- HERO SECTION --- */}
-      <main className="max-w-6xl mx-auto px-6 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
-            Une problématique ? <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
-              Nous avons la réponse.
-            </span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Cabinet d'analyse stratégique et de sécurisation.
-            Ne restez pas dans le doute. Activez le moteur ZYQTRON.
-          </p>
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-16 w-full">
+        
+        <div class="text-center mb-16 fade-in">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-white">
+                Une problématique ? <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
+                    Nous avons la réponse.
+                </span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                Cabinet d'analyse stratégique et de sécurisation.<br>
+                Activez le moteur ZYQTRON.
+            </p>
         </div>
 
-        {/* --- GRILLE DES 8 PILIERS (NAVIGATEUR) --- */}
-        {!activeTab && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {UNIVERSES.map((universe) => (
-              <button
-                key={universe.id}
-                onClick={() => startDiagnosis(universe.id)}
-                className="group p-6 bg-[#111] border border-gray-800 rounded-xl hover:border-emerald-500/50 hover:bg-[#161616] transition-all duration-300 text-left"
-              >
-                <div className={`mb-4 ${universe.color} group-hover:scale-110 transition-transform`}>
-                  {universe.icon}
-                </div>
-                <h3 className="font-bold text-lg">{universe.label}</h3>
-                <p className="text-xs text-gray-500 mt-2">Lancer l'analyse &rarr;</p>
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* --- ZONE DE DIAGNOSTIC (CHATBOT INTEGRÉ) --- */}
-        {activeTab && (
-          <div className="max-w-2xl mx-auto bg-[#111] border border-gray-800 rounded-2xl p-8 shadow-2xl animate-fade-in-up">
-            <div className="flex justify-between items-start mb-6 border-b border-gray-800 pb-4">
-              <div>
-                <span className="text-xs font-mono text-emerald-500 uppercase tracking-widest">Module Actif</span>
-                <h2 className="text-2xl font-bold mt-1">
-                  {UNIVERSES.find(u => u.id === activeTab)?.label}
-                </h2>
-              </div>
-              <button onClick={() => setActiveTab(null)} className="text-gray-500 hover:text-white">Fermer</button>
+        <div id="grid-univers" class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in">
             </div>
 
-            {/* SCRIPT LOGIQUE DU CHATBOT */}
-            <div className="space-y-6">
-              <div className="bg-[#1a1a1a] p-4 rounded-lg rounded-tl-none border border-gray-700 inline-block">
-                <p>Bonjour. Je suis l'assistant de pré-qualification Zyqtron.</p>
-                <p className="mt-2 text-gray-300">Pour établir votre diagnostic, quelle est votre situation ?</p>
-              </div>
-
-              {/* CHOIX DE PROFIL */}
-              <div className="flex flex-col space-y-3">
-                <button className="p-3 text-left border border-gray-700 rounded hover:bg-emerald-900/20 hover:border-emerald-500 transition">
-                  👤 Je suis un Particulier
-                </button>
-                <button className="p-3 text-left border border-gray-700 rounded hover:bg-emerald-900/20 hover:border-emerald-500 transition">
-                  🏢 Je suis un Professionnel / TPE
-                </button>
-                <button className="p-3 text-left border border-gray-700 rounded hover:bg-emerald-900/20 hover:border-emerald-500 transition">
-                  🚨 C'est une urgence (Arnaque / Piratage)
-                </button>
-              </div>
+        <div id="diagnostic-zone" class="hidden max-w-2xl mx-auto bg-[#111] border border-gray-800 rounded-2xl p-8 shadow-2xl fade-in">
+            <div class="flex justify-between items-start mb-6 border-b border-gray-800 pb-4">
+                <div>
+                    <span class="text-xs font-mono text-emerald-500 uppercase tracking-widest">Module Actif</span>
+                    <h2 id="diag-title" class="text-2xl font-bold mt-1 text-white">Titre Univers</h2>
+                </div>
+                <button onclick="closeDiag()" class="text-gray-500 hover:text-white">Fermer ✕</button>
             </div>
             
-            <div className="mt-8 pt-4 border-t border-gray-800 text-center text-xs text-gray-600">
-              <Lock size={12} className="inline mr-1" />
-              Connexion sécurisée TLS. Analyse confidentielle Z-Score.
+            <div class="space-y-6">
+                <div class="bg-[#1a1a1a] p-4 rounded-lg border border-gray-700">
+                    <p class="text-white">Bonjour. Je suis l'assistant Zyqtron.</p>
+                    <p class="mt-2 text-gray-400">Pour établir votre diagnostic dans cet univers, quelle est votre situation ?</p>
+                </div>
+                <div class="flex flex-col space-y-3">
+                    <button class="p-4 text-left border border-gray-700 rounded hover:bg-emerald-900/20 hover:border-emerald-500 transition text-gray-200" onclick="alert('Module de qualification bientôt connecté à Make.')">
+                        👤 Je suis un Particulier
+                    </button>
+                    <button class="p-4 text-left border border-gray-700 rounded hover:bg-emerald-900/20 hover:border-emerald-500 transition text-gray-200" onclick="alert('Module de qualification bientôt connecté à Make.')">
+                        🏢 Je suis un Professionnel / TPE
+                    </button>
+                    <button class="p-4 text-left border border-gray-700 rounded hover:bg-red-900/20 hover:border-red-500 transition text-red-200 font-bold" onclick="alert('Redirection vers procédure d\'urgence...')">
+                        🚨 URGENCE (Arnaque / Litige / Piratage)
+                    </button>
+                </div>
             </div>
-          </div>
-        )}
-      </main>
+        </div>
 
-      {/* --- FOOTER --- */}
-      <footer className="text-center py-8 text-gray-600 text-sm border-t border-gray-900 mt-12">
-        <p>&copy; 2024-2025 ZYQTRON SYSTEM. Tous droits réservés.</p>
-        <p className="mt-2 text-xs">Technologie Hybride IA + Humain.</p>
-      </footer>
-    </div>
-  );
-}
-     
+    </main>
+
+    <footer class="text-center py-8 text-gray-600 text-sm border-t border-gray-900 mt-12 bg-[#0a0a0a]">
+        <p>&copy; 2025 ZYQTRON SYSTEM. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Configuration des 8 Piliers
+        const universes = [
+            { id: 'business', label: 'Business & Stratégie', icon: 'brain', color: 'text-amber-400' },
+            { id: 'cyber', label: 'Cybersécurité', icon: 'shield', color: 'text-emerald-400' },
+            { id: 'family', label: 'Famille & Vie Perso', icon: 'users', color: 'text-blue-400' },
+            { id: 'legal', label: 'Juridique & Contrats', icon: 'file-text', color: 'text-slate-300' },
+            { id: 'tech', label: 'Tech & Web', icon: 'globe', color: 'text-cyan-400' },
+            { id: 'creation', label: 'Création & Idées', icon: 'zap', color: 'text-yellow-300' },
+            { id: 'sport', label: 'Sport & Performance', icon: 'activity', color: 'text-red-400' },
+            { id: 'secret', label: 'Autre / Confidentiel', icon: 'lock', color: 'text-purple-400' }
+        ];
+
+        // Génération de la grille
+        const grid = document.getElementById('grid-univers');
+        universes.forEach(u => {
+            const btn = document.createElement('button');
+            btn.className = 'universe-card group p-6 bg-[#111] border border-gray-800 rounded-xl transition-all duration-300 text-left cursor-pointer';
+            btn.innerHTML = `
+                <div class="mb-4 ${u.color} group-hover:scale-110 transition-transform">
+                    <i data-lucide="${u.icon}" width="32" height="32"></i>
+                </div>
+                <h3 class="font-bold text-lg text-gray-100">${u.label}</h3>
+                <p class="text-xs text-gray-500 mt-2">Lancer l'analyse &rarr;</p>
+            `;
+            btn.onclick = () => openDiag(u);
+            grid.appendChild(btn);
+        });
+
+        // Fonctions d'interaction
+        function openDiag(u) {
+            document.getElementById('grid-univers').classList.add('hidden');
+            document.getElementById('diagnostic-zone').classList.remove('hidden');
+            document.getElementById('diag-title').innerText = u.label;
+        }
+
+        function closeDiag() {
+            document.getElementById('grid-univers').classList.remove('hidden');
+            document.getElementById('diagnostic-zone').classList.add('hidden');
+        }
+
+        // Initialisation des icônes
+        lucide.createIcons();
+    </script>
+</body>
+</html>
