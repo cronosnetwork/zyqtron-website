@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurer votre Analyse | ZYQTRON</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #050505; color: #e0e0e0; font-family: sans-serif; }
+        .option-check:checked + div { border-color: #10b981; background-color: #064e3b; }
+        .card-selected { border-color: #10b981; box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="p-6 border-b border-gray-800 bg-[#0a0a0a]">
+        <div class="text-2xl font-extrabold tracking-tighter text-white">
+            <a href="index.html">ZYQTRON<span class="text-emerald-500">.</span></a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 w-full">
+
+        <div class="mb-10 text-center">
+            <span class="text-emerald-500 font-mono text-xs uppercase tracking-widest">Pôle Insights</span>
+            <h1 class="text-3xl md:text-4xl font-bold text-white mt-2">AUDIT DE SITE WEB / SEO</h1>
+            <p class="text-gray-400 mt-2">Choisissez votre niveau de profondeur et configurez vos options.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            
+            <div onclick="selectPack(4.99, 'FLASH')" id="pack-flash" class="cursor-pointer border border-gray-800 bg-[#111] p-6 rounded-xl hover:border-gray-600 transition relative group">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-800 text-xs px-3 py-1 rounded-full uppercase">Entrée</div>
+                <h3 class="text-xl font-bold text-white">FLASH</h3>
+                <div class="text-3xl font-bold text-emerald-400 my-4">4,99 €</div>
+                <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                    <li>✓ Rapport Automatisé</li>
+                    <li>✓ Données Brutes</li>
+                    <li>✓ Délai 48h</li>
+                </ul>
+                <div class="w-full py-2 bg-gray-800 text-center rounded group-hover:bg-gray-700">Sélectionner</div>
+            </div>
+
+            <div onclick="selectPack(19.99, 'EXPLORER')" id="pack-explorer" class="cursor-pointer border-2 border-emerald-600 bg-[#0f1f15] p-6 rounded-xl relative transform scale-105 shadow-2xl">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full uppercase font-bold">Recommandé</div>
+                <h3 class="text-xl font-bold text-white">EXPLORER</h3>
+                <div class="text-3xl font-bold text-emerald-400 my-4">19,99 €</div>
+                <ul class="text-sm text-gray-300 space-y-2 mb-6">
+                    <li>✓ Tout le Pack Flash</li>
+                    <li>✓ <strong>Interprétation Humaine</strong></li>
+                    <li>✓ Conseils de correction</li>
+                    <li>✓ Délai 48h</li>
+                </ul>
+                <div class="w-full py-2 bg-emerald-600 text-white text-center rounded font-bold hover:bg-emerald-500">Sélectionner</div>
+            </div>
+
+            <div onclick="location.href='mailto:contact@zyqtron.com?subject=Demande Devis Strategie'" class="cursor-pointer border border-gray-800 bg-[#111] p-6 rounded-xl hover:border-purple-500 transition">
+                <h3 class="text-xl font-bold text-white">STRATÈGE</h3>
+                <div class="text-xl font-bold text-purple-400 my-4">Sur Devis</div>
+                <p class="text-xs text-gray-500 mb-4">À partir de 149€</p>
+                <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                    <li>✓ Audit Complet 360°</li>
+                    <li>✓ Plan d'Action Détaillé</li>
+                    <li>✓ Visio de Restitution</li>
+                </ul>
+                <div class="w-full py-2 border border-purple-500 text-purple-400 text-center rounded hover:bg-purple-900/20">Demander</div>
+            </div>
+        </div>
+
+        <div id="options-zone" class="hidden animate-fade-in mb-12">
+            <h3 class="text-xl font-bold text-white mb-6 border-l-4 border-emerald-500 pl-4">MODULES D'EXTENSION</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label class="cursor-pointer">
+                    <input type="checkbox" class="option-check hidden" onchange="updateTotal(9, this)">
+                    <div class="border border-gray-700 bg-[#161616] p-4 rounded-lg flex justify-between items-center hover:bg-[#222] transition">
+                        <div>
+                            <div class="font-bold text-white">⚡️ Urgence Chrono</div>
+                            <div class="text-xs text-gray-500">Livraison garantie sous 24h</div>
+                        </div>
+                        <div class="text-emerald-400 font-mono">+9 €</div>
+                    </div>
+                </label>
+
+                <label class="cursor-pointer">
+                    <input type="checkbox" class="option-check hidden" onchange="updateTotal(15, this)">
+                    <div class="border border-gray-700 bg-[#161616] p-4 rounded-lg flex justify-between items-center hover:bg-[#222] transition">
+                        <div>
+                            <div class="font-bold text-white">📝 Format Éditable</div>
+                            <div class="text-xs text-gray-500">Recevez le fichier Word source</div>
+                        </div>
+                        <div class="text-emerald-400 font-mono">+15 €</div>
+                    </div>
+                </label>
+
+                <label class="cursor-pointer">
+                    <input type="checkbox" class="option-check hidden" onchange="updateTotal(29, this)">
+                    <div class="border border-gray-700 bg-[#161616] p-4 rounded-lg flex justify-between items-center hover:bg-[#222] transition">
+                        <div>
+                            <div class="font-bold text-white">🕵️‍♂️ Espionnage Concurrents</div>
+                            <div class="text-xs text-gray-500">Analyse de 2 concurrents directs</div>
+                        </div>
+                        <div class="text-emerald-400 font-mono">+29 €</div>
+                    </div>
+                </label>
+
+                <label class="cursor-pointer">
+                    <input type="checkbox" class="option-check hidden" onchange="updateTotal(12, this)">
+                    <div class="border border-gray-700 bg-[#161616] p-4 rounded-lg flex justify-between items-center hover:bg-[#222] transition">
+                        <div>
+                            <div class="font-bold text-white">🛡️ Scan Sécurité</div>
+                            <div class="text-xs text-gray-500">Vérification SSL & Failles</div>
+                        </div>
+                        <div class="text-emerald-400 font-mono">+12 €</div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div id="payment-zone" class="hidden fixed bottom-0 left-0 right-0 bg-[#111] border-t border-gray-800 p-6 shadow-2xl">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+                
+                <div class="flex items-center gap-4">
+                    <span class="text-sm text-gray-400 uppercase">Je commande en tant que :</span>
+                    <select class="bg-[#222] text-white border border-gray-700 rounded p-2 text-sm">
+                        <option value="particulier">👤 PARTICULIER (Prix Soutenu)</option>
+                        <option value="pro">🏢 ENTREPRISE (Facture Pro)</option>
+                    </select>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500">Total estimé</div>
+                        <div class="text-3xl font-bold text-white" id="display-total">0,00 €</div>
+                    </div>
+                    <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition">
+                        COMMANDER &rarr;
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        let basePrice = 0;
+        let optionsPrice = 0;
+
+        function selectPack(price, name) {
+            // Reset visuel
+            document.getElementById('pack-flash').classList.remove('card-selected');
+            document.getElementById('pack-explorer').classList.remove('card-selected');
+            
+            // Active visuel
+            if(price === 4.99) document.getElementById('pack-flash').classList.add('card-selected');
+            if(price === 19.99) document.getElementById('pack-explorer').classList.add('card-selected');
+
+            // Logique
+            basePrice = price;
+            document.getElementById('options-zone').classList.remove('hidden');
+            document.getElementById('payment-zone').classList.remove('hidden');
+            calculateTotal();
+        }
+
+        function updateTotal(amount, checkbox) {
+            if (checkbox.checked) {
+                optionsPrice += amount;
+            } else {
+                optionsPrice -= amount;
+            }
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            let total = basePrice + optionsPrice;
+            document.getElementById('display-total').innerText = total.toFixed(2).replace('.', ',') + " €";
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
