@@ -8,20 +8,14 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { background-color: #050505; color: #e0e0e0; font-family: sans-serif; }
-        .option-check:checked + div { border-color: #f59e0b; background-color: #451a03; }
-        .card-selected { border-color: #f59e0b; box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); }
     </style>
-  <meta name="description" content="Analyse d&#x27;achat : validation, risques, checklists et recommandations.">
+  <meta name="description" content="Analyse d'achat : validation, risques, checklists et recommandations.">
   <link rel="canonical" href="https://zyqtron.com/achat">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ZYQTRON">
   <meta property="og:title" content="Achat | ZYQTRON">
-  <meta property="og:description" content="Analyse d&#x27;achat : validation, risques, checklists et recommandations.">
+  <meta property="og:description" content="Analyse d'achat : validation, risques, checklists et recommandations.">
   <meta property="og:url" content="https://zyqtron.com/achat">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Achat | ZYQTRON">
-  <meta name="twitter:description" content="Analyse d&#x27;achat : validation, risques, checklists et recommandations.">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ZYQTRON", "url": "https://zyqtron.com/", "email": "contact@zyqtron.com", "sameAs": []}</script>
   <script src="/assets/chatbot.js" defer></script>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -39,94 +33,61 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div onclick="selectPack(4.99)" id="pack-flash" class="cursor-pointer border border-gray-800 bg-[#111] p-6 rounded-xl hover:border-gray-600 transition">
-                <h3 class="text-xl font-bold text-white">VERDICT FLASH</h3>
-                <div class="text-3xl font-bold text-amber-500 my-4">4,99 €</div>
-                <ul class="text-sm text-gray-400 space-y-2 mb-6">
-                    <li>✓ Score Confiance Vendeur</li>
-                    <li>✓ Analyse Image Inversée</li>
-                    <li>✓ Avis Consolidés</li>
-                </ul>
-                <div class="w-full py-2 bg-gray-800 text-center rounded">Sélectionner</div>
+            
+            <div class="border border-gray-800 bg-[#111] p-6 rounded-xl hover:border-gray-600 transition flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-white">VERDICT FLASH</h3>
+                    <div class="text-3xl font-bold text-amber-500 my-4">4,99 €</div>
+                    <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                        <li>✓ Score Confiance Vendeur</li>
+                        <li>✓ Analyse Image Inversée</li>
+                        <li>✓ Avis Consolidés</li>
+                    </ul>
+                </div>
+                <a href="https://www.paypal.com/paypalme/VOTRE_PSEUDO/4.99EUR" target="_blank" class="block w-full py-3 bg-[#0070BA] hover:bg-[#003087] text-white text-center rounded font-bold transition flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.946 5.438-3.158 7.12-6.574 7.12h-1.29a.64.64 0 0 0-.635.539l-2.348 14.868a.641.641 0 0 0 .633.74h4.606c.414 0 .807-.26.936-.656l.006-.022.842-2.88c.118-.396-.184-.816-.597-.816H9.79L7.905 20.65a.64.64 0 0 1-.829.687z"/></svg>
+                    Payer (PayPal)
+                </a>
             </div>
 
-            <div onclick="selectPack(19.99)" id="pack-explorer" class="cursor-pointer border-2 border-amber-600 bg-[#2a1b00] p-6 rounded-xl transform scale-105 shadow-2xl">
+            <div class="border-2 border-amber-600 bg-[#2a1b00] p-6 rounded-xl transform scale-105 shadow-2xl flex flex-col justify-between relative">
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-600 text-white text-xs px-3 py-1 rounded-full uppercase font-bold">Sécurité</div>
-                <h3 class="text-xl font-bold text-white">INVESTIGATION</h3>
-                <div class="text-3xl font-bold text-amber-500 my-4">19,99 €</div>
-                <ul class="text-sm text-gray-300 space-y-2 mb-6">
-                    <li>✓ Tout le Pack Flash</li>
-                    <li>✓ <strong>Check-list des pièges cachés</strong></li>
-                    <li>✓ Analyse technique du profil</li>
-                </ul>
-                <div class="w-full py-2 bg-amber-600 text-white text-center rounded font-bold">Sélectionner</div>
+                <div>
+                    <h3 class="text-xl font-bold text-white">INVESTIGATION</h3>
+                    <div class="text-3xl font-bold text-amber-500 my-4">19,99 €</div>
+                    <ul class="text-sm text-gray-300 space-y-2 mb-6">
+                        <li>✓ Tout le Pack Flash</li>
+                        <li>✓ <strong>Check-list des pièges cachés</strong></li>
+                        <li>✓ Analyse technique du profil</li>
+                    </ul>
+                </div>
+                <a href="https://www.paypal.com/paypalme/VOTRE_PSEUDO/19.99EUR" target="_blank" class="block w-full py-3 bg-[#0070BA] hover:bg-[#003087] text-white text-center rounded font-bold transition flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.946 5.438-3.158 7.12-6.574 7.12h-1.29a.64.64 0 0 0-.635.539l-2.348 14.868a.641.641 0 0 0 .633.74h4.606c.414 0 .807-.26.936-.656l.006-.022.842-2.88c.118-.396-.184-.816-.597-.816H9.79L7.905 20.65a.64.64 0 0 1-.829.687z"/></svg>
+                    Payer (PayPal)
+                </a>
             </div>
 
-            <div onclick="location.href='contact.html'" class="cursor-pointer border border-gray-800 bg-[#111] p-6 rounded-xl hover:border-purple-500 transition">
-                <h3 class="text-xl font-bold text-white">AUTO / IMMO</h3>
-                <div class="text-xl font-bold text-purple-400 my-4">Sur Devis</div>
-                <p class="text-xs text-gray-500 mb-4">Gros montants</p>
-                <ul class="text-sm text-gray-400 space-y-2 mb-6">
-                    <li>✓ Analyse Plaque / Historique</li>
-                    <li>✓ Analyse Titre de propriété</li>
-                    <li>✓ Rapport avant visite</li>
-                </ul>
-                <div class="w-full py-2 border border-purple-500 text-purple-400 text-center rounded">Contacter</div>
+            <div class="border border-gray-800 bg-[#111] p-6 rounded-xl hover:border-purple-500 transition flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-white">AUTO / IMMO</h3>
+                    <div class="text-xl font-bold text-purple-400 my-4">Sur Devis</div>
+                    <p class="text-xs text-gray-500 mb-4">Paiement sur Facture</p>
+                    <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                        <li>✓ Analyse Plaque / Historique</li>
+                        <li>✓ Analyse Titre de propriété</li>
+                        <li>✓ Rapport formel Zyqtron</li>
+                    </ul>
+                </div>
+                <a href="contact.html?sujet=devis_auto" class="block w-full py-3 border border-purple-500 text-purple-400 hover:bg-purple-900/20 text-center rounded transition">
+                    DEMANDER UN DEVIS
+                </a>
             </div>
         </div>
 
-        <div id="options-zone" class="hidden animate-fade-in mb-12">
-            <h3 class="text-xl font-bold text-white mb-6 border-l-4 border-amber-500 pl-4">OUTILS NÉGOCIATION</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <label class="cursor-pointer">
-                    <input type="checkbox" class="option-check hidden" onchange="updateTotal(9, this)">
-                    <div class="border border-gray-700 bg-[#161616] p-4 rounded-lg flex justify-between items-center hover:bg-[#222]">
-                        <div><div class="font-bold text-white">💬 Script Négociation</div><div class="text-xs text-gray-500">Quoi dire pour faire baisser le prix ?</div></div>
-                        <div class="text-amber-400 font-mono">+9 €</div>
-                    </div>
-                </label>
-                <label class="cursor-pointer">
-                    <input type="checkbox" class="option-check hidden" onchange="updateTotal(15, this)">
-                    <div class="border border-gray-700 bg-[#161616] p-4 rounded-lg flex justify-between items-center hover:bg-[#222]">
-                        <div><div class="font-bold text-white">🕵️‍♂️ Test Vendeur</div><div class="text-xs text-gray-500">Les 3 questions pièges à poser</div></div>
-                        <div class="text-amber-400 font-mono">+15 €</div>
-                    </div>
-                </label>
-            </div>
-        </div>
-
-        <div id="payment-zone" class="hidden fixed bottom-0 left-0 right-0 bg-[#111] border-t border-gray-800 p-6 shadow-2xl">
-            <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="flex items-center gap-4">
-                    <span class="text-sm text-gray-400 uppercase">Cadre :</span>
-                    <select class="bg-[#222] text-white border border-gray-700 rounded p-2 text-sm">
-                        <option value="particulier">👤 PARTICULIER (Prix Soutenu)</option>
-                        <option value="pro">🏢 ENTREPRISE (Facture Pro)</option>
-                    </select>
-                </div>
-                <div class="flex items-center gap-6">
-                    <div class="text-right"><div class="text-xs text-gray-500">Total</div><div class="text-3xl font-bold text-white" id="display-total">0,00 €</div></div>
-                    <button class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg">COMMANDER &rarr;</button>
-                </div>
-            </div>
+        <div class="text-center text-xs text-gray-600 mt-8">
+            Paiement sécurisé par PayPal. Analyse effectuée par Zyqtron Shield Intelligence.
         </div>
     </main>
-
-    <script>
-        let basePrice = 0; let optionsPrice = 0;
-        function selectPack(price) {
-            document.getElementById('pack-flash').classList.remove('card-selected');
-            document.getElementById('pack-explorer').classList.remove('card-selected');
-            if(price === 4.99) document.getElementById('pack-flash').classList.add('card-selected');
-            if(price === 19.99) document.getElementById('pack-explorer').classList.add('card-selected');
-            basePrice = price;
-            document.getElementById('options-zone').classList.remove('hidden');
-            document.getElementById('payment-zone').classList.remove('hidden');
-            calculateTotal();
-        }
-        function updateTotal(amount, checkbox) { checkbox.checked ? optionsPrice += amount : optionsPrice -= amount; calculateTotal(); }
-        function calculateTotal() { document.getElementById('display-total').innerText = (basePrice + optionsPrice).toFixed(2).replace('.', ',') + " €"; }
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
