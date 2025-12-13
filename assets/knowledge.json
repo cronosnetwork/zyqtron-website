@@ -1,0 +1,65 @@
+{
+  "brand": {
+    "name": "ZYQTRON",
+    "tagline": "Moteur de Certitude & Analyse",
+    "contactEmail": "contact@zyqtron.com"
+  },
+  "modules": [
+    {
+      "id": "thkl",
+      "title": "Zyqtron THKL (Technology / Know-How Licensing)",
+      "keywords": ["licence", "licensing", "savoir-faire", "know-how", "thkl", "actif", "dossier", "transfert"],
+      "summary": "Packaging et monétisation d'actifs (savoir-faire/technologie) : architecture, specs, runbooks, plans de validation, packs Light/Pro/Co-Dev, avec options d'exclusivité, cession ou OEM/embedded.",
+      "cta": "Décrivez votre actif ou votre besoin : secteur + objectif + contraintes."
+    },
+    {
+      "id": "shield",
+      "title": "Zyqtron Shield (Cybersécurité)",
+      "keywords": ["cyber", "soc", "siem", "soar", "xdr", "incident", "mdr", "audit", "hardening"],
+      "summary": "Diagnostic et accompagnement cyber : stratégie, gouvernance, architecture SIEM/SOAR/XDR, hardening, préparation & gestion d'incidents, industrialisation (runbooks, triage, noise reduction).",
+      "cta": "Votre contexte : taille, stack, douleur principale, urgence (oui/non)."
+    },
+    {
+      "id": "ai",
+      "title": "Zyqtron IA (Atelier multi-IA)",
+      "keywords": ["ia", "atelier", "prompt", "automatisation", "document", "pitch", "pricing"],
+      "summary": "Atelier multi-IA pour recherche/sourcing, rédaction pro (teasers/decks/scripts), standardisation documentaire, matrices de scoring, kits de prospection B2B.",
+      "cta": "Quel livrable vous voulez : teaser, deck, scripts, scoring, playbook ?"
+    },
+    {
+      "id": "conseil",
+      "title": "Zyqtron Conseil (Business / Stratégie / Déploiement)",
+      "keywords": ["stratégie", "go-to-market", "pricing", "roadmap", "productisation", "tpe", "pme"],
+      "summary": "Positionnement, offre & pricing, GTM outbound/inbound, process commerciaux, roadmaps 90j/6m/12m, structuration TPE/PME.",
+      "cta": "Votre objectif : +CA, meilleure offre, prospection, repositionnement, process ?"
+    },
+    {
+      "id": "zformation",
+      "title": "Z-Formation™ (formations duplicables)",
+      "keywords": ["formation", "bootcamp", "cohorte", "certification", "mentorat"],
+      "summary": "Formations cyber/IA/Ops et méthodes Zyqtron, en cours, cohortes, bootcamps, mentorat, avec modèles abonnement/licence.",
+      "cta": "Public visé + niveau + format souhaité."
+    },
+    {
+      "id": "web",
+      "title": "Produits web & outils",
+      "keywords": ["site", "seo", "micro-saas", "outil", "template", "catalogue"],
+      "summary": "Sites monétisés (ads/affiliation/leads), outils web 1-feature, templates premium, micro-SaaS, catalogue en ligne avec gate NDA.",
+      "cta": "Décrivez votre idée (1 phrase) + cible + monétisation."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Quels sont vos services principaux ?",
+      "a": "Zyqtron opère en pôles : THKL (licensing de savoir-faire), Shield (cybersécurité), IA (atelier multi-IA), Conseil (business/GTM), Z-Formation™ (formations), et produits web/outils."
+    },
+    {
+      "q": "Combien ça coûte ?",
+      "a": "On travaille en packs (diagnostic, delivery, intégration) selon périmètre. Dites : votre objectif, votre contexte et votre délai — on vous propose un pack et une fourchette."
+    },
+    {
+      "q": "Comment démarrer ?",
+      "a": "Envoyez 5 lignes : 1) qui vous êtes 2) votre problème 3) impact 4) deadline 5) contrainte (budget/tech/juridique)."
+    }
+  ]
+}
